@@ -5,7 +5,7 @@ import { schedule } from "./event-data";
 
 export function Schedule() {
   const [active, setActive] = useState(0);
-  const day = schedule[active];
+  const day = schedule[active] ?? schedule[0]!;
 
   return (
     <section id="programacao" className="relative overflow-hidden surface-ink py-24 sm:py-32">
