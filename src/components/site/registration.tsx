@@ -63,12 +63,12 @@ export function Registration() {
           onSubmit={(e) => {
             e.preventDefault();
             if (!valid) {
-              toast.error("Preencha nome e e-mail para continuar.");
+              toast.error("Preencha nome, e-mail e WhatsApp para continuar.");
               return;
             }
             setDone(true);
             toast.success("Inscrição enviada!", {
-              description: "Você recebe a confirmação por e-mail em instantes.",
+              description: "Você recebe as instruções de pagamento em instantes.",
             });
           }}
           className="rounded-xl border border-paper/15 bg-paper/[0.05] p-6 backdrop-blur-sm sm:p-8"
@@ -79,10 +79,11 @@ export function Registration() {
                 <Check className="size-5" />
               </span>
               <h3 className="mt-6 font-display text-2xl font-semibold text-paper">
-                Vaga reservada, {name.split(" ")[0]}!
+                Inscrição registrada, {name.split(" ")[0]}!
               </h3>
               <p className="mt-3 max-w-xs text-sm text-paper/65">
-                Enviamos os próximos passos para {email}. Nos vemos no {EVENT.name}.
+                Enviamos os próximos passos e o pagamento de {EVENT.price} para {email}.
+                Nos vemos no {EVENT.name}.
               </p>
               <button
                 type="button"
@@ -90,6 +91,8 @@ export function Registration() {
                   setDone(false);
                   setName("");
                   setEmail("");
+                  setPhone("");
+                  setChurch("");
                 }}
                 className="mt-7 text-sm text-paper/60 underline underline-offset-4 transition-colors hover:text-paper"
               >
