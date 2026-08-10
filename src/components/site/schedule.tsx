@@ -14,8 +14,8 @@ export function Schedule() {
         <SectionHeading
           eyebrow="Programação"
           inverse
-          title="Três dias, um só encontro"
-          description="Escolha um dia para ver os horários. Tudo pensado para caber na sua rotina e ainda assim te tirar do automático."
+          title="Uma noite em três movimentos"
+          description="Escolha um momento para ver os horários. Das 18h às 22h, entre café, dança e comunhão."
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[280px_1fr]">
@@ -68,7 +68,7 @@ export function Schedule() {
               ))}
             </ul>
             <Reveal className="mt-8 text-sm text-paper/50">
-              Horários sujeitos a pequenos ajustes — inscritos recebem a agenda final por e-mail.
+              Horários sujeitos a pequenos ajustes — inscritos recebem o roteiro final por WhatsApp.
             </Reveal>
           </div>
         </div>
