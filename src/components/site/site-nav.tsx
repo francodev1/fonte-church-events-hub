@@ -56,10 +56,20 @@ export function SiteNav() {
           )}
         >
           <a href="#top" className="flex items-center gap-2.5">
-            <span className="grid size-7 place-items-center rounded-full bg-primary">
+            <span
+              className={cn(
+                "grid size-7 place-items-center rounded-full transition-colors duration-500",
+                scrolled ? "bg-primary" : "bg-paper/15 ring-1 ring-paper/25",
+              )}
+            >
               <span className="size-2 rounded-full bg-azure" />
             </span>
-            <span className="font-display text-sm font-semibold tracking-tight">
+            <span
+              className={cn(
+                "font-display text-sm font-semibold tracking-tight transition-colors duration-500",
+                scrolled ? "text-foreground" : "text-paper",
+              )}
+            >
               {EVENT.church}
             </span>
           </a>
@@ -70,8 +80,14 @@ export function SiteNav() {
                 key={l.href}
                 href={l.href}
                 className={cn(
-                  "link-underline text-sm transition-colors",
-                  active === l.href ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                  "link-underline text-sm transition-colors duration-500",
+                  scrolled
+                    ? active === l.href
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                    : active === l.href
+                      ? "text-paper"
+                      : "text-paper/60 hover:text-paper",
                 )}
               >
                 {l.label}
@@ -82,7 +98,10 @@ export function SiteNav() {
           <div className="flex items-center gap-2">
             <a
               href="#inscricao"
-              className="hidden rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
+              className={cn(
+                "hidden rounded-full px-5 py-2 text-sm font-medium transition-all duration-500 hover:-translate-y-0.5 sm:inline-flex",
+                scrolled ? "bg-primary text-primary-foreground" : "bg-paper text-ink",
+              )}
             >
               Garantir vaga
             </a>
@@ -90,7 +109,10 @@ export function SiteNav() {
               type="button"
               aria-label={open ? "Fechar menu" : "Abrir menu"}
               onClick={() => setOpen((v) => !v)}
-              className="grid size-9 place-items-center rounded-full border border-ink/10 md:hidden"
+              className={cn(
+                "grid size-9 place-items-center rounded-full border transition-colors duration-500 md:hidden",
+                scrolled ? "border-ink/10 text-foreground" : "border-paper/25 text-paper",
+              )}
             >
               {open ? <X className="size-4" /> : <Menu className="size-4" />}
             </button>
