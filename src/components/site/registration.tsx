@@ -12,10 +12,15 @@ const OPTIONS = ["Sozinho(a)", "Com a família", "Com meu grupo"];
 export function Registration() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [church, setChurch] = useState("");
   const [mode, setMode] = useState(OPTIONS[0]!);
   const [done, setDone] = useState(false);
 
-  const valid = name.trim().length > 2 && /.+@.+\..+/.test(email);
+  const valid =
+    name.trim().length > 2 &&
+    /.+@.+\..+/.test(email) &&
+    phone.replace(/\D/g, "").length >= 10;
 
   return (
     <section id="inscricao" className="relative overflow-hidden surface-ink glow-top py-24 sm:py-32">
