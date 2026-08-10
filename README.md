@@ -1,14 +1,19 @@
-# Welcome to your Lovable project
+# Fonte Church Events Hub
+
+Crie uma landing page para eventos da minha igreja Fonte Church, tem essa hoje https://faceafacefontechurch.vercel.app
+é bem interativa, mas quero fazer uma mais interativa e bonita, profissional e tech
+
+construa essa page, perfeita e linda, numa pegada minimalista mas bem interativa, com tons da palheta de offwhite, azul marinho, veja se da certo
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f1c518fc-f313-4cdc-a031-7790d7d15491).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +25,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
