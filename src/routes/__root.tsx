@@ -78,16 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Face a Face | Fonte Church" },
+      { title: "Eventos | Fonte Church" },
       {
         name: "description",
-        content: "Eventos da Fonte Church — três dias de adoração, palavra e comunidade.",
+        content: "Eventos da Fonte Church em Alvorada, RS — adoração, dança e comunhão.",
       },
       { name: "author", content: "Fonte Church" },
-      { property: "og:title", content: "Face a Face | Fonte Church" },
+      { property: "og:title", content: "Eventos | Fonte Church" },
       {
         property: "og:description",
-        content: "Eventos da Fonte Church — três dias de adoração, palavra e comunidade.",
+        content: "Eventos da Fonte Church em Alvorada, RS — adoração, dança e comunhão.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
