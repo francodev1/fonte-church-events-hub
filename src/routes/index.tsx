@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteNav } from "@/components/site/site-nav";
+import { Hero } from "@/components/site/hero";
+import { Marquee } from "@/components/site/marquee";
+import { Manifesto } from "@/components/site/manifesto";
+import { Experiences } from "@/components/site/experiences";
+import { Schedule } from "@/components/site/schedule";
+import { Voices } from "@/components/site/voices";
+import { Faq } from "@/components/site/faq";
+import { Registration } from "@/components/site/registration";
+import { SiteFooter } from "@/components/site/site-footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Face a Face 2026 | Fonte Church — 3 dias de imersão" },
+      {
+        name: "description",
+        content:
+          "Face a Face 2026 da Fonte Church: três dias de adoração, palavra e comunidade em São Paulo, de 09 a 11 de outubro. Inscrição gratuita e vagas limitadas.",
+      },
+      { property: "og:title", content: "Face a Face 2026 | Fonte Church" },
+      {
+        property: "og:description",
+        content:
+          "Três dias de adoração, palavra e comunidade na Fonte Church. 09 a 11 de outubro de 2026 — garanta sua vaga.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteNav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Manifesto />
+        <Experiences />
+        <Schedule />
+        <Voices />
+        <Faq />
+        <Registration />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
