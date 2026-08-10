@@ -8,6 +8,7 @@ import { SectionHeading } from "./reveal";
 
 const OPTIONS = ["Sozinho(a)", "Com a família", "Com meu grupo"];
 
+
 export function Registration() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,15 +25,15 @@ export function Registration() {
           <SectionHeading
             eyebrow="Inscrição"
             inverse
-            title="Reserve seu lugar no Face a Face"
-            description="São 1.800 lugares e a última edição esgotou em nove dias. Deixe seus dados e a secretaria confirma sua vaga por e-mail."
+            title="Garanta seu lugar no Café com Dança"
+            description="Deixe seus dados e enviamos as instruções de pagamento para confirmar sua vaga. A inscrição é individual e inclui o café da noite."
           />
           <div className="mt-10 max-w-md">
             <Countdown />
           </div>
           <dl className="mt-10 grid gap-5 text-sm sm:grid-cols-2">
             <div>
-              <dt className="eyebrow text-paper/45">Datas</dt>
+              <dt className="eyebrow text-paper/45">Data e horário</dt>
               <dd className="mt-1.5 text-paper">{EVENT.dateLabel}</dd>
             </div>
             <div>
@@ -41,6 +42,14 @@ export function Registration() {
                 {EVENT.venue}
                 <span className="block text-paper/50">{EVENT.city}</span>
               </dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-paper/45">Valor</dt>
+              <dd className="mt-1.5 text-paper">{EVENT.price} por pessoa</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-paper/45">Inspiração</dt>
+              <dd className="mt-1.5 text-paper">Salmos 150:4</dd>
             </div>
           </dl>
         </div>
