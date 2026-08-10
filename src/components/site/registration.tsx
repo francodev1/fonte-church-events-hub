@@ -126,6 +126,33 @@ export function Registration() {
                   className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
                 />
               </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="whatsapp" className="eyebrow text-paper/50">
+                    WhatsApp
+                  </label>
+                  <input
+                    id="whatsapp"
+                    inputMode="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="(51) 90000-0000"
+                    className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="igreja" className="eyebrow text-paper/50">
+                    Igreja
+                  </label>
+                  <input
+                    id="igreja"
+                    value={church}
+                    onChange={(e) => setChurch(e.target.value)}
+                    placeholder="Fonte Church"
+                    className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
+                  />
+                </div>
+              </div>
               <div>
                 <span className="eyebrow text-paper/50">Como vai participar</span>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -155,11 +182,12 @@ export function Registration() {
                     : "bg-paper/25 text-paper/60",
                 )}
               >
-                Confirmar inscrição
+                Finalizar inscrição · {EVENT.price}
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
               </button>
               <p className="text-xs leading-relaxed text-paper/40">
-                Inscrição gratuita. Usamos seus dados apenas para comunicação do evento.
+                Inscrição de {EVENT.price} por pessoa, com café incluso. Usamos seus dados apenas
+                para comunicação do evento.
               </p>
             </div>
           )}
