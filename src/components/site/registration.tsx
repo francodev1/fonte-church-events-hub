@@ -8,13 +8,19 @@ import { SectionHeading } from "./reveal";
 
 const OPTIONS = ["Sozinho(a)", "Com a família", "Com meu grupo"];
 
+
 export function Registration() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [church, setChurch] = useState("");
   const [mode, setMode] = useState(OPTIONS[0]!);
   const [done, setDone] = useState(false);
 
-  const valid = name.trim().length > 2 && /.+@.+\..+/.test(email);
+  const valid =
+    name.trim().length > 2 &&
+    /.+@.+\..+/.test(email) &&
+    phone.replace(/\D/g, "").length >= 10;
 
   return (
     <section id="inscricao" className="relative overflow-hidden surface-ink glow-top py-24 sm:py-32">
@@ -24,15 +30,15 @@ export function Registration() {
           <SectionHeading
             eyebrow="Inscrição"
             inverse
-            title="Reserve seu lugar no Face a Face"
-            description="São 1.800 lugares e a última edição esgotou em nove dias. Deixe seus dados e a secretaria confirma sua vaga por e-mail."
+            title="Garanta seu lugar no Café com Dança"
+            description="Deixe seus dados e enviamos as instruções de pagamento para confirmar sua vaga. A inscrição é individual e inclui o café da noite."
           />
           <div className="mt-10 max-w-md">
             <Countdown />
           </div>
           <dl className="mt-10 grid gap-5 text-sm sm:grid-cols-2">
             <div>
-              <dt className="eyebrow text-paper/45">Datas</dt>
+              <dt className="eyebrow text-paper/45">Data e horário</dt>
               <dd className="mt-1.5 text-paper">{EVENT.dateLabel}</dd>
             </div>
             <div>
@@ -42,6 +48,14 @@ export function Registration() {
                 <span className="block text-paper/50">{EVENT.city}</span>
               </dd>
             </div>
+            <div>
+              <dt className="eyebrow text-paper/45">Valor</dt>
+              <dd className="mt-1.5 text-paper">{EVENT.price} por pessoa</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-paper/45">Inspiração</dt>
+              <dd className="mt-1.5 text-paper">Salmos 150:4</dd>
+            </div>
           </dl>
         </div>
 
@@ -49,12 +63,12 @@ export function Registration() {
           onSubmit={(e) => {
             e.preventDefault();
             if (!valid) {
-              toast.error("Preencha nome e e-mail para continuar.");
+              toast.error("Preencha nome, e-mail e WhatsApp para continuar.");
               return;
             }
             setDone(true);
             toast.success("Inscrição enviada!", {
-              description: "Você recebe a confirmação por e-mail em instantes.",
+              description: "Você recebe as instruções de pagamento em instantes.",
             });
           }}
           className="rounded-xl border border-paper/15 bg-paper/[0.05] p-6 backdrop-blur-sm sm:p-8"
@@ -65,10 +79,11 @@ export function Registration() {
                 <Check className="size-5" />
               </span>
               <h3 className="mt-6 font-display text-2xl font-semibold text-paper">
-                Vaga reservada, {name.split(" ")[0]}!
+                Inscrição registrada, {name.split(" ")[0]}!
               </h3>
               <p className="mt-3 max-w-xs text-sm text-paper/65">
-                Enviamos os próximos passos para {email}. Nos vemos no {EVENT.name}.
+                Enviamos os próximos passos e o pagamento de {EVENT.price} para {email}.
+                Nos vemos no {EVENT.name}.
               </p>
               <button
                 type="button"
@@ -76,6 +91,8 @@ export function Registration() {
                   setDone(false);
                   setName("");
                   setEmail("");
+                  setPhone("");
+                  setChurch("");
                 }}
                 className="mt-7 text-sm text-paper/60 underline underline-offset-4 transition-colors hover:text-paper"
               >
@@ -109,6 +126,33 @@ export function Registration() {
                   className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
                 />
               </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="whatsapp" className="eyebrow text-paper/50">
+                    WhatsApp
+                  </label>
+                  <input
+                    id="whatsapp"
+                    inputMode="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="(51) 90000-0000"
+                    className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="igreja" className="eyebrow text-paper/50">
+                    Igreja
+                  </label>
+                  <input
+                    id="igreja"
+                    value={church}
+                    onChange={(e) => setChurch(e.target.value)}
+                    placeholder="Fonte Church"
+                    className="mt-2.5 w-full border-b border-paper/20 bg-transparent pb-2.5 text-base text-paper placeholder:text-paper/30 transition-colors focus:border-azure focus:outline-none"
+                  />
+                </div>
+              </div>
               <div>
                 <span className="eyebrow text-paper/50">Como vai participar</span>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -138,11 +182,12 @@ export function Registration() {
                     : "bg-paper/25 text-paper/60",
                 )}
               >
-                Confirmar inscrição
+                Finalizar inscrição · {EVENT.price}
                 <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
               </button>
               <p className="text-xs leading-relaxed text-paper/40">
-                Inscrição gratuita. Usamos seus dados apenas para comunicação do evento.
+                Inscrição de {EVENT.price} por pessoa, com café incluso. Usamos seus dados apenas
+                para comunicação do evento.
               </p>
             </div>
           )}

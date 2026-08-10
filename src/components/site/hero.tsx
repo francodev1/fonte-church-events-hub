@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero-worship.jpg";
+import heroImg from "@/assets/hero-danca.jpg";
 import { EVENT, stats } from "./event-data";
 import { Countdown } from "./countdown";
 
@@ -31,7 +31,7 @@ export function Hero() {
     >
       <img
         src={heroImg}
-        alt="Congregação da Fonte Church com as mãos levantadas durante o Face a Face"
+        alt="Ministério de dança da Fonte Church adorando com tecidos em luz azul marinho"
         width={1600}
         height={1104}
         style={{ transform: `translate3d(0, ${offset}px, 0) scale(1.08)` }}
@@ -55,22 +55,23 @@ export function Hero() {
         </div>
 
         <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.75rem,9vw,7rem)] font-semibold leading-[0.92] text-paper">
-          Face a Face
-          <span className="block text-paper/40">{EVENT.theme}</span>
+          Café com Dança
+          <span className="block text-paper/40">Propósito em movimento</span>
         </h1>
 
         <div className="mt-10 grid gap-10 border-t border-paper/15 pt-8 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <div className="max-w-xl">
             <p className="text-lg leading-relaxed text-paper/75">
-              Três dias para desacelerar, ouvir e voltar diferente. Uma imersão de
-              adoração, palavra e comunidade no coração da {EVENT.church}.
+              Uma noite para celebrar o Senhor em adoração, movimento e comunhão.
+              Louvor inspirado em Salmos 150:4, dança e um café que aproxima a
+              família {EVENT.church}.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
                 href="#inscricao"
                 className="group inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-transform duration-300 hover:-translate-y-0.5"
               >
-                Garantir minha vaga
+                Garantir minha inscrição · {EVENT.price}
                 <span className="grid size-5 place-items-center rounded-full bg-ink/10 transition-transform duration-300 group-hover:translate-x-0.5">
                   →
                 </span>
@@ -79,7 +80,7 @@ export function Hero() {
                 href="#programacao"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-6 py-3.5 text-sm font-medium text-paper transition-colors duration-300 hover:bg-paper/10"
               >
-                Ver programação
+                Ver o roteiro da noite
               </a>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-paper/60">

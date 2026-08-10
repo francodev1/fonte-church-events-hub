@@ -1,31 +1,31 @@
 import { useState } from "react";
-import groups from "@/assets/event-groups.jpg";
-import word from "@/assets/event-word.jpg";
-import worship from "@/assets/event-worship.jpg";
+import cafe from "@/assets/event-cafe.jpg";
+import danca from "@/assets/event-danca.jpg";
+import comunhao from "@/assets/event-comunhao.jpg";
 import { cn } from "@/lib/utils";
 import { SectionHeading } from "./reveal";
 
 const ITEMS = [
   {
-    tag: "Plenárias",
-    title: "Noites de adoração",
-    text: "Duas horas de louvor conduzido pela banda Fonte, com repertório inédito da 9ª edição.",
-    image: worship,
-    alt: "Banda de louvor no palco iluminado em azul marinho",
+    tag: "Movimento",
+    title: "Adoração em dança",
+    text: "Coreografias guiadas, roda aberta e liberdade para adorar com o corpo inteiro — sem experiência necessária.",
+    image: danca,
+    alt: "Silhueta de dançarina com os braços levantados em luz azul marinho",
   },
   {
-    tag: "Trilhas",
-    title: "Palavra em profundidade",
-    text: "Quatro trilhas simultâneas: fé e trabalho, casamento, jovens e vida devocional.",
-    image: word,
-    alt: "Bíblia aberta e caderno sobre mesa clara",
+    tag: "Café",
+    title: "Mesa posta para todos",
+    text: "Café fresco, doces e salgados servidos na chegada e no intervalo. Um convite para desacelerar e conversar.",
+    image: cafe,
+    alt: "Xícaras de café e doces sobre mesa clara",
   },
   {
-    tag: "Comunidade",
-    title: "Mesas de conversa",
-    text: "Grupos de oito pessoas, um mediador e perguntas que a gente costuma evitar.",
-    image: groups,
-    alt: "Grupo de jovens conversando no saguão do evento",
+    tag: "Comunhão",
+    title: "Rodas de conversa e oração",
+    text: "Grupos pequenos para orar, ouvir e fortalecer laços. Ninguém volta para casa sozinho.",
+    image: comunhao,
+    alt: "Grupo de pessoas conversando e rindo com café nas mãos",
   },
 ];
 
@@ -37,8 +37,8 @@ export function Experiences() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Experiências"
-          title="O que acontece nesses três dias"
-          description="Passe o mouse para explorar cada frente do evento."
+          title="O que acontece nessa noite"
+          description="Passe o mouse para explorar cada parte do encontro."
         />
 
         <div className="mt-14 grid gap-4 md:grid-cols-3">

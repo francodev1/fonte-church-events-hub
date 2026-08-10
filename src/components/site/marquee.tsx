@@ -1,6 +1,6 @@
 import { EVENT } from "./event-data";
 
-const WORDS = ["Adoração", "Palavra", "Comunidade", "Oração", "Presença", "Envio"];
+const WORDS = ["Dança", "Adoração", "Café", "Comunhão", "Movimento", "Propósito"];
 
 export function Marquee() {
   const items = [...WORDS, ...WORDS];

@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import { EVENT } from "./event-data";
 
 const LINKS = [
-  { href: "#manifesto", label: "Manifesto" },
+  { href: "#manifesto", label: "O encontro" },
   { href: "#experiencias", label: "Experiências" },
-  { href: "#programacao", label: "Programação" },
-  { href: "#vozes", label: "Vozes" },
+  { href: "#programacao", label: "Roteiro" },
+  { href: "#vozes", label: "Quem conduz" },
   { href: "#faq", label: "FAQ" },
 ];
 

@@ -3,11 +3,26 @@ import { cn } from "@/lib/utils";
 import { SectionHeading } from "./reveal";
 
 const VOICES = [
-  { name: "Pr. Daniel Moraes", role: "Pastor sênior · Fonte Church", topic: "Face a Face: a coragem de ser visto" },
-  { name: "Marina Rocha", role: "Ministra de louvor", topic: "Adoração que não depende de palco" },
-  { name: "Pr. Tiago Lemos", role: "Fé & trabalho", topic: "Segunda-feira também é culto" },
-  { name: "Ana Beatriz Alves", role: "Discipulado de jovens", topic: "Identidade em tempos de vitrine" },
-  { name: "Rafael Nunes", role: "Casais", topic: "Conversas que a gente adia" },
+  {
+    name: "Ministério de Dança Fonte",
+    role: "Condução do movimento",
+    topic: "Coreografias guiadas e roda aberta para toda a comunidade",
+  },
+  {
+    name: "Banda Fonte",
+    role: "Louvor ao vivo",
+    topic: "Repertório inspirado em Salmos 150:4",
+  },
+  {
+    name: "Pastoral Fonte Church",
+    role: "Palavra e oração",
+    topic: "Propósito em movimento: adorar com tudo o que somos",
+  },
+  {
+    name: "Equipe de Acolhimento",
+    role: "Recepção e café",
+    topic: "Mesa posta, boas-vindas e mesas de conversa",
+  },
 ];
 
 export function Voices() {
@@ -17,9 +32,9 @@ export function Voices() {
     <section id="vozes" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Vozes"
-          title="Quem vai conduzir"
-          description="Pessoas da casa e convidados que vivem o que ensinam."
+          eyebrow="Quem conduz"
+          title="As equipes por trás da noite"
+          description="Gente da casa servindo para que você só precise chegar e adorar."
         />
 
         <ul className="mt-14 border-t border-ink/10">
