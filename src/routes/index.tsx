@@ -13,17 +13,17 @@ import { SiteFooter } from "@/components/site/site-footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Face a Face 2026 | Fonte Church — 3 dias de imersão" },
+      { title: "Café com Dança 2026 | Fonte Church — Alvorada, RS" },
       {
         name: "description",
         content:
-          "Face a Face 2026 da Fonte Church: três dias de adoração, palavra e comunidade em São Paulo, de 09 a 11 de outubro. Inscrição gratuita e vagas limitadas.",
+          "Café com Dança da Fonte Church: sábado, 19 de setembro de 2026, às 18h, em Alvorada/RS. Adoração com dança, louvor, café e comunhão. Inscrição R$ 15,00.",
       },
-      { property: "og:title", content: "Face a Face 2026 | Fonte Church" },
+      { property: "og:title", content: "Café com Dança 2026 | Fonte Church" },
       {
         property: "og:description",
         content:
-          "Três dias de adoração, palavra e comunidade na Fonte Church. 09 a 11 de outubro de 2026 — garanta sua vaga.",
+          "Uma noite de adoração em movimento, café e comunhão na Fonte Church. 19 de setembro de 2026, 18h — garanta sua inscrição.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

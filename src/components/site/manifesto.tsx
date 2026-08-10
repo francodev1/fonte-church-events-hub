@@ -4,18 +4,18 @@ import { useReveal } from "@/hooks/use-reveal";
 const PILLARS = [
   {
     n: "01",
-    title: "Sem pressa",
-    text: "Blocos longos de louvor e silêncio. Nada de correria entre um item e outro da agenda.",
+    title: "Sem coreografia decorada",
+    text: "Passos simples, roda guiada e liberdade total. Se você sabe respirar, você sabe adorar em movimento.",
   },
   {
     n: "02",
-    title: "Sem palco alto",
-    text: "Mesas de conversa, rodas pequenas e liderança acessível. Perguntas são bem-vindas.",
+    title: "Sem pressa",
+    text: "Duas paradas para café e conversa. A noite foi desenhada para aproximar, não para correr.",
   },
   {
     n: "03",
     title: "Sem espectadores",
-    text: "Todo mundo participa de alguma forma: oração, acolhimento, música ou serviço.",
+    text: "Todo mundo entra na roda de alguma forma: dança, louvor, oração ou servindo o café.",
   },
 ];
 
@@ -28,14 +28,14 @@ export function Manifesto() {
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <div>
             <SectionHeading
-              eyebrow="Manifesto"
+              eyebrow="O encontro"
               title={
                 <>
-                  Um encontro feito para
-                  <span className="text-muted-foreground"> gente real</span>, não para plateias.
+                  Adoração que acontece com o
+                  <span className="text-muted-foreground"> corpo inteiro</span>, não só com a voz.
                 </>
               }
-              description="O Face a Face nasceu de uma pergunta simples: e se a gente parasse tudo por três dias só para estar diante de Deus e uns dos outros? Nove edições depois, a resposta continua a mesma."
+              description="O Café com Dança reúne a comunidade da Fonte Church para celebrar o Senhor em movimento e comunhão. Louvor, dança e um café que fortalece nossos laços e renova o espírito."
             />
             <Reveal delay={120} className="mt-10">
               <span
@@ -44,9 +44,9 @@ export function Manifesto() {
                 className="line-grow block h-px w-full bg-ink/15"
               />
               <blockquote className="mt-8 max-w-md font-display text-xl leading-snug text-foreground">
-                “Uma coisa pedi ao Senhor: que eu possa contemplar a sua beleza.”
+                “Louvai-o com adufes e danças; louvai-o com instrumentos de cordas e com flautas.”
                 <footer className="mt-3 text-sm font-normal text-muted-foreground">
-                  Salmos 27:4
+                  Salmos 150:4
                 </footer>
               </blockquote>
             </Reveal>
