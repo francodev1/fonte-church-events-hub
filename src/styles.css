@@ -6,12 +6,13 @@
 
 /*
  * Fonte Church — Café com Dança design system.
- * Palette: off-white paper + deep navy ink + electric azure accent.
+ * Palette: warm cream paper + deep espresso ink + antique gold accent.
  * All colors in oklch, all tokens semantic.
  */
 
 @theme inline {
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-script: "Caveat", cursive;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -46,7 +47,7 @@
   --color-ink-soft: var(--ink-soft);
   --color-paper: var(--paper);
   --color-paper-dim: var(--paper-dim);
-  --color-azure: var(--azure);
+  --color-gold: var(--gold);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -65,32 +66,32 @@
 :root {
   --radius: 0.25rem;
 
-  --paper: oklch(0.972 0.006 85);
-  --paper-dim: oklch(0.941 0.008 85);
-  --ink: oklch(0.213 0.052 259);
-  --ink-soft: oklch(0.312 0.049 259);
-  --azure: oklch(0.66 0.152 249);
+  --paper: oklch(0.975 0.014 75);
+  --paper-dim: oklch(0.945 0.018 72);
+  --ink: oklch(0.24 0.045 48);
+  --ink-soft: oklch(0.34 0.045 48);
+  --gold: oklch(0.685 0.135 63);
 
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: oklch(0.988 0.004 85);
+  --card: oklch(0.985 0.01 75);
   --card-foreground: var(--ink);
-  --popover: oklch(0.988 0.004 85);
+  --popover: oklch(0.985 0.01 75);
   --popover-foreground: var(--ink);
   --primary: var(--ink);
   --primary-foreground: var(--paper);
   --secondary: var(--paper-dim);
   --secondary-foreground: var(--ink);
   --muted: var(--paper-dim);
-  --muted-foreground: oklch(0.51 0.028 259);
-  --accent: var(--azure);
-  --accent-foreground: oklch(0.985 0.005 250);
+  --muted-foreground: oklch(0.5 0.03 48);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.2 0.03 48);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0.005 250);
-  --border: oklch(0.213 0.052 259 / 12%);
-  --input: oklch(0.213 0.052 259 / 18%);
-  --ring: var(--azure);
-  --chart-1: var(--azure);
+  --destructive-foreground: oklch(0.985 0.01 75);
+  --border: oklch(0.24 0.045 48 / 12%);
+  --input: oklch(0.24 0.045 48 / 18%);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
@@ -101,38 +102,38 @@
   --sidebar-primary-foreground: var(--paper);
   --sidebar-accent: var(--paper-dim);
   --sidebar-accent-foreground: var(--ink);
-  --sidebar-border: oklch(0.213 0.052 259 / 12%);
-  --sidebar-ring: var(--azure);
+  --sidebar-border: oklch(0.24 0.045 48 / 12%);
+  --sidebar-ring: var(--gold);
 
   --gradient-ink: linear-gradient(
     160deg,
-    oklch(0.213 0.052 259) 0%,
-    oklch(0.168 0.048 262) 55%,
-    oklch(0.135 0.04 264) 100%
+    oklch(0.24 0.045 48) 0%,
+    oklch(0.185 0.042 50) 55%,
+    oklch(0.13 0.035 52) 100%
   );
   --gradient-glow: radial-gradient(
     60% 60% at 50% 0%,
-    color-mix(in oklab, var(--azure) 45%, transparent) 0%,
+    color-mix(in oklab, var(--gold) 45%, transparent) 0%,
     transparent 70%
   );
-  --shadow-lift: 0 1px 2px oklch(0.213 0.052 259 / 6%), 0 18px 40px -24px oklch(0.213 0.052 259 / 28%);
-  --shadow-ink: 0 30px 80px -40px oklch(0.135 0.04 264 / 55%);
+  --shadow-lift: 0 1px 2px oklch(0.24 0.045 48 / 6%), 0 18px 40px -24px oklch(0.24 0.045 48 / 28%);
+  --shadow-ink: 0 30px 80px -40px oklch(0.13 0.035 52 / 55%);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark {
-  --background: oklch(0.145 0.042 262);
-  --foreground: oklch(0.972 0.006 85);
-  --card: oklch(0.19 0.045 261);
-  --card-foreground: oklch(0.972 0.006 85);
-  --popover: oklch(0.19 0.045 261);
-  --popover-foreground: oklch(0.972 0.006 85);
-  --primary: oklch(0.972 0.006 85);
-  --primary-foreground: oklch(0.19 0.045 261);
-  --secondary: oklch(0.25 0.045 261);
-  --secondary-foreground: oklch(0.972 0.006 85);
-  --muted: oklch(0.25 0.045 261);
-  --muted-foreground: oklch(0.72 0.03 259);
+  --background: oklch(0.145 0.035 50);
+  --foreground: oklch(0.975 0.014 75);
+  --card: oklch(0.19 0.04 50);
+  --card-foreground: oklch(0.975 0.014 75);
+  --popover: oklch(0.19 0.04 50);
+  --popover-foreground: oklch(0.975 0.014 75);
+  --primary: oklch(0.975 0.014 75);
+  --primary-foreground: oklch(0.19 0.04 50);
+  --secondary: oklch(0.25 0.04 50);
+  --secondary-foreground: oklch(0.975 0.014 75);
+  --muted: oklch(0.25 0.04 50);
+  --muted-foreground: oklch(0.72 0.03 48);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
 }
@@ -176,7 +177,7 @@
   text-transform: uppercase;
 }
 
-/* Ink surface (navy blocks) */
+/* Ink surface (espresso blocks) */
 @utility surface-ink {
   background-image: var(--gradient-ink);
   color: var(--paper);

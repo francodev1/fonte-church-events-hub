@@ -20,6 +20,9 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Contains live Mercado Pago credentials in plain text — never commit
+VERCEL_ENV_VARS.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

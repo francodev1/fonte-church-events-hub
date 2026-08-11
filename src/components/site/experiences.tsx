@@ -11,7 +11,7 @@ const ITEMS = [
     title: "Adoração em dança",
     text: "Coreografias guiadas, roda aberta e liberdade para adorar com o corpo inteiro — sem experiência necessária.",
     image: danca,
-    alt: "Silhueta de dançarina com os braços levantados em luz azul marinho",
+    alt: "Silhueta de dançarina com os braços levantados em luz dourada",
   },
   {
     tag: "Café",
@@ -60,9 +60,9 @@ export function Experiences() {
                 height={900}
                 className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.135_0.04_264/0.94),oklch(0.135_0.04_264/0.35)_55%,oklch(0.135_0.04_264/0.15))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.13_0.035_52/0.94),oklch(0.13_0.035_52/0.35)_55%,oklch(0.13_0.035_52/0.15))]" />
               <div className="relative">
-                <span className="eyebrow text-azure">{item.tag}</span>
+                <span className="eyebrow text-gold">{item.tag}</span>
                 <h3 className="mt-3 font-display text-2xl font-semibold text-paper">
                   {item.title}
                 </h3>

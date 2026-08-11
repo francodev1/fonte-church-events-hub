@@ -31,33 +31,35 @@ export function Hero() {
     >
       <img
         src={heroImg}
-        alt="Ministério de dança da Fonte Church adorando com tecidos em luz azul marinho"
+        alt="Ministério de dança da Fonte Church adorando com tecidos em luz dourada"
         width={1600}
         height={1104}
         style={{ transform: `translate3d(0, ${offset}px, 0) scale(1.08)` }}
         className="absolute inset-0 size-full object-cover opacity-45 transition-transform duration-300 ease-out will-change-transform"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.135_0.04_264/0.96),oklch(0.15_0.045_262/0.6)_45%,oklch(0.15_0.045_262/0.85))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.13_0.035_52/0.96),oklch(0.185_0.042_50/0.6)_45%,oklch(0.185_0.042_50/0.85))]" />
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
         style={{
-          background: `radial-gradient(38rem 38rem at ${pointer.x}% ${pointer.y}%, color-mix(in oklab, var(--azure) 26%, transparent), transparent 70%)`,
+          background: `radial-gradient(38rem 38rem at ${pointer.x}% ${pointer.y}%, color-mix(in oklab, var(--gold) 26%, transparent), transparent 70%)`,
         }}
       />
       <div className="absolute inset-0 grid-lines-inverse opacity-60" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pb-10 pt-32 sm:px-6">
         <div className="flex items-center gap-3">
-          <span className="size-1.5 animate-pulse rounded-full bg-azure" />
+          <span className="size-1.5 animate-pulse rounded-full bg-gold" />
           <span className="eyebrow text-paper/60">
             {EVENT.church} · {EVENT.edition} · Inscrições abertas
           </span>
         </div>
 
-        <h1 className="mt-6 max-w-4xl font-display text-[clamp(2.75rem,9vw,7rem)] font-semibold leading-[0.92] text-paper">
-          Café com Dança
-          <span className="block text-paper/40">Propósito em movimento</span>
+        <h1 className="mt-6 max-w-4xl font-script text-[clamp(3.5rem,12vw,9rem)] font-semibold leading-[0.85] text-paper">
+          Café <span className="text-paper/50">com</span> Dança
         </h1>
+        <p className="mt-3 max-w-md font-script text-2xl text-gold sm:text-3xl">
+          Propósito, movimento e comunhão
+        </p>
 
         <div className="mt-10 grid gap-10 border-t border-paper/15 pt-8 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <div className="max-w-xl">

@@ -13,45 +13,24 @@ export const EVENT = {
 
 export const stats = [
   { value: "19.09", label: "sábado à noite" },
-  { value: "18h", label: "abertura das portas" },
+  { value: "17h40", label: "check-in e recepção" },
   { value: "R$ 15", label: "inscrição" },
   { value: "150:4", label: "Salmos" },
 ];
 
 export const schedule = [
-  {
-    day: "Momento 01",
-    date: "18h00 — 19h00",
-    title: "Chegada",
-    items: [
-      { time: "18:00", name: "Recepção & credenciamento", note: "Entrada principal" },
-      { time: "18:15", name: "Café, doces e boas-vindas", note: "Salão" },
-      { time: "18:40", name: "Abertura e oração inicial", note: "Pastoral Fonte" },
-      { time: "18:55", name: "Aquecimento em roda", note: "Todos juntos" },
-    ],
-  },
-  {
-    day: "Momento 02",
-    date: "19h00 — 20h30",
-    title: "Movimento",
-    items: [
-      { time: "19:00", name: "Adoração com dança e movimento", note: "Ministério de Dança" },
-      { time: "19:30", name: "Louvor ao vivo · Salmos 150:4", note: "Banda Fonte" },
-      { time: "20:00", name: "Coreografia coletiva", note: "Participação livre" },
-      { time: "20:20", name: "Palavra: propósito em movimento", note: "Pastoral Fonte" },
-    ],
-  },
-  {
-    day: "Momento 03",
-    date: "20h30 — 22h00",
-    title: "Comunhão",
-    items: [
-      { time: "20:40", name: "Segundo café & mesas de conversa", note: "Salão" },
-      { time: "21:10", name: "Rodas de oração", note: "Grupos pequenos" },
-      { time: "21:40", name: "Última música", note: "Todos juntos" },
-      { time: "22:00", name: "Encerramento", note: "Até a próxima" },
-    ],
-  },
+  { time: "17h40 – 18h20", name: "Check-in e recepção" },
+  { time: "18h20 – 18h25", name: "Abertura e boas-vindas" },
+  { time: "18h25 – 18h45", name: "Alongamento e aquecimento" },
+  { time: "18h45 – 19h25", name: "4 apresentações" },
+  { time: "19h25 – 19h35", name: "Pausa / preparação para o 2º momento" },
+  { time: "19h35 – 20h05", name: "3 apresentações" },
+  { time: "20h05 – 20h15", name: "Momento de transição / preparação para a Palavra" },
+  { time: "20h15 – 20h45", name: "Palavra" },
+  { time: "20h45 – 21h10", name: "Café e comunhão" },
+  { time: "21h15 – 21h30", name: "Roda de oração" },
+  { time: "21h30 – 21h40", name: "Momento de celebração — todos dançam juntos" },
+  { time: "21h40 – 21h45", name: "Oração de encerramento" },
 ];
 
 export const faq = [

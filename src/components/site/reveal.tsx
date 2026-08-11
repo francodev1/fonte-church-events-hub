@@ -55,7 +55,7 @@ export function SectionHeading({
           align === "center" && "justify-center",
         )}
       >
-        <span className={cn("size-1.5 rounded-full", inverse ? "bg-azure" : "bg-accent")} />
+        <span className={cn("size-1.5 rounded-full", inverse ? "bg-gold" : "bg-accent")} />
         <span className={cn("eyebrow", inverse ? "text-paper/60" : "text-muted-foreground")}>
           {eyebrow}
         </span>

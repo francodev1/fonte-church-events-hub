@@ -10,33 +10,103 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PagamentoPendenteRouteImport } from './routes/pagamento-pendente'
+import { Route as PagamentoSucessoRouteImport } from './routes/pagamento-sucesso'
+import { Route as ApiInscricaoRouteImport } from './routes/api/inscricao'
+import { Route as ApiPagamentoRouteImport } from './routes/api/pagamento'
+import { Route as ApiNotificacoesPagamentoRouteImport } from './routes/api/notificacoes/pagamento'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PagamentoPendenteRoute = PagamentoPendenteRouteImport.update({
+  id: '/pagamento-pendente',
+  path: '/pagamento-pendente',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentoSucessoRoute = PagamentoSucessoRouteImport.update({
+  id: '/pagamento-sucesso',
+  path: '/pagamento-sucesso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiInscricaoRoute = ApiInscricaoRouteImport.update({
+  id: '/api/inscricao',
+  path: '/api/inscricao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPagamentoRoute = ApiPagamentoRouteImport.update({
+  id: '/api/pagamento',
+  path: '/api/pagamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiNotificacoesPagamentoRoute =
+  ApiNotificacoesPagamentoRouteImport.update({
+    id: '/api/notificacoes/pagamento',
+    path: '/api/notificacoes/pagamento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/pagamento-pendente': typeof PagamentoPendenteRoute
+  '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/api/inscricao': typeof ApiInscricaoRoute
+  '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/pagamento-pendente': typeof PagamentoPendenteRoute
+  '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/api/inscricao': typeof ApiInscricaoRoute
+  '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/pagamento-pendente': typeof PagamentoPendenteRoute
+  '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/api/inscricao': typeof ApiInscricaoRoute
+  '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/pagamento-pendente'
+    | '/pagamento-sucesso'
+    | '/api/inscricao'
+    | '/api/pagamento'
+    | '/api/notificacoes/pagamento'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/pagamento-pendente'
+    | '/pagamento-sucesso'
+    | '/api/inscricao'
+    | '/api/pagamento'
+    | '/api/notificacoes/pagamento'
+  id:
+    | '__root__'
+    | '/'
+    | '/pagamento-pendente'
+    | '/pagamento-sucesso'
+    | '/api/inscricao'
+    | '/api/pagamento'
+    | '/api/notificacoes/pagamento'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PagamentoPendenteRoute: typeof PagamentoPendenteRoute
+  PagamentoSucessoRoute: typeof PagamentoSucessoRoute
+  ApiInscricaoRoute: typeof ApiInscricaoRoute
+  ApiPagamentoRoute: typeof ApiPagamentoRoute
+  ApiNotificacoesPagamentoRoute: typeof ApiNotificacoesPagamentoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +118,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pagamento-pendente': {
+      id: '/pagamento-pendente'
+      path: '/pagamento-pendente'
+      fullPath: '/pagamento-pendente'
+      preLoaderRoute: typeof PagamentoPendenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamento-sucesso': {
+      id: '/pagamento-sucesso'
+      path: '/pagamento-sucesso'
+      fullPath: '/pagamento-sucesso'
+      preLoaderRoute: typeof PagamentoSucessoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/inscricao': {
+      id: '/api/inscricao'
+      path: '/api/inscricao'
+      fullPath: '/api/inscricao'
+      preLoaderRoute: typeof ApiInscricaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/pagamento': {
+      id: '/api/pagamento'
+      path: '/api/pagamento'
+      fullPath: '/api/pagamento'
+      preLoaderRoute: typeof ApiPagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/notificacoes/pagamento': {
+      id: '/api/notificacoes/pagamento'
+      path: '/api/notificacoes/pagamento'
+      fullPath: '/api/notificacoes/pagamento'
+      preLoaderRoute: typeof ApiNotificacoesPagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PagamentoPendenteRoute: PagamentoPendenteRoute,
+  PagamentoSucessoRoute: PagamentoSucessoRoute,
+  ApiInscricaoRoute: ApiInscricaoRoute,
+  ApiPagamentoRoute: ApiPagamentoRoute,
+  ApiNotificacoesPagamentoRoute: ApiNotificacoesPagamentoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

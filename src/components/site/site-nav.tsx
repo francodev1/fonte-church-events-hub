@@ -62,7 +62,7 @@ export function SiteNav() {
                 scrolled ? "bg-primary" : "bg-paper/15 ring-1 ring-paper/25",
               )}
             >
-              <span className="size-2 rounded-full bg-azure" />
+              <span className="size-2 rounded-full bg-gold" />
             </span>
             <span
               className={cn(

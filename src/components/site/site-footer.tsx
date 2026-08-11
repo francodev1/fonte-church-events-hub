@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid size-7 place-items-center rounded-full bg-primary">
-              <span className="size-2 rounded-full bg-azure" />
+              <span className="size-2 rounded-full bg-gold" />
             </span>
             <span className="font-display text-sm font-semibold">{EVENT.church}</span>
           </div>
