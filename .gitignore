@@ -33,3 +33,5 @@ VERCEL_ENV_VARS.md
 *.njsproj
 *.sln
 *.sw?
+.vercel
+.env*

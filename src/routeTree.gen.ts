@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PagamentoPendenteRouteImport } from './routes/pagamento-pendente'
 import { Route as PagamentoSucessoRouteImport } from './routes/pagamento-sucesso'
+import { Route as PainelRouteImport } from './routes/painel'
 import { Route as ApiInscricaoRouteImport } from './routes/api/inscricao'
 import { Route as ApiPagamentoRouteImport } from './routes/api/pagamento'
+import { Route as ApiAdminInscricoesRouteImport } from './routes/api/admin/inscricoes'
 import { Route as ApiNotificacoesPagamentoRouteImport } from './routes/api/notificacoes/pagamento'
 
 const IndexRoute = IndexRouteImport.update({
@@ -31,6 +33,11 @@ const PagamentoSucessoRoute = PagamentoSucessoRouteImport.update({
   path: '/pagamento-sucesso',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PainelRoute = PainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiInscricaoRoute = ApiInscricaoRouteImport.update({
   id: '/api/inscricao',
   path: '/api/inscricao',
@@ -39,6 +46,11 @@ const ApiInscricaoRoute = ApiInscricaoRouteImport.update({
 const ApiPagamentoRoute = ApiPagamentoRouteImport.update({
   id: '/api/pagamento',
   path: '/api/pagamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminInscricoesRoute = ApiAdminInscricoesRouteImport.update({
+  id: '/api/admin/inscricoes',
+  path: '/api/admin/inscricoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiNotificacoesPagamentoRoute =
@@ -52,16 +64,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pagamento-pendente': typeof PagamentoPendenteRoute
   '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/painel': typeof PainelRoute
   '/api/inscricao': typeof ApiInscricaoRoute
   '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/admin/inscricoes': typeof ApiAdminInscricoesRoute
   '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pagamento-pendente': typeof PagamentoPendenteRoute
   '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/painel': typeof PainelRoute
   '/api/inscricao': typeof ApiInscricaoRoute
   '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/admin/inscricoes': typeof ApiAdminInscricoesRoute
   '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRoutesById {
@@ -69,8 +85,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/pagamento-pendente': typeof PagamentoPendenteRoute
   '/pagamento-sucesso': typeof PagamentoSucessoRoute
+  '/painel': typeof PainelRoute
   '/api/inscricao': typeof ApiInscricaoRoute
   '/api/pagamento': typeof ApiPagamentoRoute
+  '/api/admin/inscricoes': typeof ApiAdminInscricoesRoute
   '/api/notificacoes/pagamento': typeof ApiNotificacoesPagamentoRoute
 }
 export interface FileRouteTypes {
@@ -79,24 +97,30 @@ export interface FileRouteTypes {
     | '/'
     | '/pagamento-pendente'
     | '/pagamento-sucesso'
+    | '/painel'
     | '/api/inscricao'
     | '/api/pagamento'
+    | '/api/admin/inscricoes'
     | '/api/notificacoes/pagamento'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/pagamento-pendente'
     | '/pagamento-sucesso'
+    | '/painel'
     | '/api/inscricao'
     | '/api/pagamento'
+    | '/api/admin/inscricoes'
     | '/api/notificacoes/pagamento'
   id:
     | '__root__'
     | '/'
     | '/pagamento-pendente'
     | '/pagamento-sucesso'
+    | '/painel'
     | '/api/inscricao'
     | '/api/pagamento'
+    | '/api/admin/inscricoes'
     | '/api/notificacoes/pagamento'
   fileRoutesById: FileRoutesById
 }
@@ -104,8 +128,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PagamentoPendenteRoute: typeof PagamentoPendenteRoute
   PagamentoSucessoRoute: typeof PagamentoSucessoRoute
+  PainelRoute: typeof PainelRoute
   ApiInscricaoRoute: typeof ApiInscricaoRoute
   ApiPagamentoRoute: typeof ApiPagamentoRoute
+  ApiAdminInscricoesRoute: typeof ApiAdminInscricoesRoute
   ApiNotificacoesPagamentoRoute: typeof ApiNotificacoesPagamentoRoute
 }
 
@@ -132,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagamentoSucessoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/painel': {
+      id: '/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof PainelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/inscricao': {
       id: '/api/inscricao'
       path: '/api/inscricao'
@@ -144,6 +177,13 @@ declare module '@tanstack/react-router' {
       path: '/api/pagamento'
       fullPath: '/api/pagamento'
       preLoaderRoute: typeof ApiPagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/inscricoes': {
+      id: '/api/admin/inscricoes'
+      path: '/api/admin/inscricoes'
+      fullPath: '/api/admin/inscricoes'
+      preLoaderRoute: typeof ApiAdminInscricoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/notificacoes/pagamento': {
@@ -160,8 +200,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PagamentoPendenteRoute: PagamentoPendenteRoute,
   PagamentoSucessoRoute: PagamentoSucessoRoute,
+  PainelRoute: PainelRoute,
   ApiInscricaoRoute: ApiInscricaoRoute,
   ApiPagamentoRoute: ApiPagamentoRoute,
+  ApiAdminInscricoesRoute: ApiAdminInscricoesRoute,
   ApiNotificacoesPagamentoRoute: ApiNotificacoesPagamentoRoute,
 }
 export const routeTree = rootRouteImport

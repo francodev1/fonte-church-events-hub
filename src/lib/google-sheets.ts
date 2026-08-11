@@ -145,6 +145,43 @@ export async function appendRegistration(data: Registration) {
   );
 }
 
+export type RegistrationRow = {
+  createdAt: string;
+  nome: string;
+  email: string;
+  telefone: string;
+  igreja: string;
+  modo: string;
+  valor: string;
+  status: string;
+  formaPagamento: string;
+  paymentId: string;
+};
+
+export async function listRegistrations(): Promise<RegistrationRow[]> {
+  const spreadsheetId = getSpreadsheetId();
+  const accessToken = await getAccessToken();
+
+  const result = await sheetsFetch(`${spreadsheetId}/values/A2:J`, accessToken);
+  const rows: string[][] = result.values || [];
+
+  return rows
+    .filter((row) => row.some((cell) => cell))
+    .map((row) => ({
+      createdAt: row[0] || "",
+      nome: row[1] || "",
+      email: row[2] || "",
+      telefone: row[3] || "",
+      igreja: row[4] || "",
+      modo: row[5] || "",
+      valor: row[6] || "",
+      status: row[7] || "",
+      formaPagamento: row[8] || "",
+      paymentId: row[9] || "",
+    }))
+    .reverse();
+}
+
 export async function updatePaymentStatus(params: {
   email: string;
   status: PaymentStatus;
