@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube, Mail } from "lucide-react";
 import { EVENT } from "./event-data";
 
@@ -14,13 +15,19 @@ export function SiteFooter() {
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             {EVENT.name} {EVENT.edition} · {EVENT.dateLabel}
-            <span className="block">{EVENT.venue}, {EVENT.city}</span>
+            <span className="block">
+              {EVENT.venue}, {EVENT.city}
+            </span>
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
-          <a href="#programacao" className="link-underline hover:text-foreground">Programação</a>
-          <a href="#inscricao" className="link-underline hover:text-foreground">Inscrição</a>
+          <a href="#programacao" className="link-underline hover:text-foreground">
+            Programação
+          </a>
+          <a href="#inscricao" className="link-underline hover:text-foreground">
+            Inscrição
+          </a>
           <a
             href="https://instagram.com"
             aria-label="Instagram"
@@ -44,8 +51,13 @@ export function SiteFooter() {
           </a>
         </div>
       </div>
-      <div className="mx-auto mt-10 max-w-7xl px-4 text-xs text-muted-foreground/70 sm:px-6">
-        © {new Date().getFullYear()} {EVENT.church}. Todos os direitos reservados.
+      <div className="mx-auto mt-10 flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 text-xs text-muted-foreground/70 sm:px-6">
+        <span>
+          © {new Date().getFullYear()} {EVENT.church}. Todos os direitos reservados.
+        </span>
+        <Link to="/painel" className="link-underline hover:text-foreground">
+          Painel de inscrições
+        </Link>
       </div>
     </footer>
   );
